@@ -1,10 +1,10 @@
 import React from 'react'; 
-import "./Header.css";
+import './Header.css';
 
 const Header = () => (
-  <header>
+  <div className="header">
     <p className="title">SWStarter</p>
-  </header>
+  </div>
 )
 
 export default Header;

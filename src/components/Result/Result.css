@@ -23,3 +23,8 @@
   height: 1px;
   background-color: #c4c4c4;
 }
+
+.details-link {
+	text-decoration: none;
+	color: #ffffff;;
+}

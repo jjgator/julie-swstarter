@@ -66,6 +66,7 @@ export default class Home extends Component {
         <Results 
           searchResults={this.state.results}
           isLoading={this.state.isLoading}
+          option={this.state.selectedOption}
         />
       </div>
     )

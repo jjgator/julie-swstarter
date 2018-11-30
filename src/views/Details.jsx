@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Details.css';
 import Person from '../components/Person/Person';
+import Movie from '../components/Movie/Movie';
 
 export default class Details extends Component {
   constructor() {
@@ -21,7 +22,10 @@ export default class Details extends Component {
   render() {
     return (
       <div className="details-container">
-        <Person details={this.state.details} />
+        {this.state.type === 'person' 
+          ? <Person details={this.state.details} />
+          : <Movie details={this.state.details} />
+        }
       </div>
     )
   }
@@ -39,18 +43,22 @@ export default class Details extends Component {
         hairColor: detailsObj.hair_color,
         height: detailsObj.height,
         mass: detailsObj.mass,
-        // TODO: api call to get list of films
-        // movies: detailsObj.films
+        movies: detailsObj.films
       }
     } else if (type === 'movie') {
       return {
         title: detailsObj.title,
-        openingCrawl: detailsObj.opening_crawl,
-        // TODO: api call to get list of characters
-        // characters: detailsObj.characters
+        openingCrawl: this.formatCrawlString(detailsObj.opening_crawl),
+        characters: detailsObj.characters
       }
     }
   }
 
   // TODO: helper function for API calls to fetch film/character detail
+
+  // helper function to format opening crawl text
+  formatCrawlString(string) {
+    const newString = string.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+    return {__html: newString};
+  }
 }

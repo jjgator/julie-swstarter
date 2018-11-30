@@ -24,6 +24,7 @@
   background-color: #c4c4c4;
 }
 
+/*removes default link formatting*/
 .details-link {
 	text-decoration: none;
 	color: #ffffff;;

@@ -1,4 +1,4 @@
-.person-container {
+.movie-container {
 	width: 744px;
 	min-height: 357px;
 	border-radius: 4px;
@@ -9,22 +9,22 @@
 	border: solid 1px #dadada;
 }
 
-.person-container .title {
+.movie-container .title {
 	font-size: 18px;
 	font-weight: bold;
 	color: #000000;
 	margin: 0 0 30px 0;
 }
 
-.details-movies-container {
+.crawl-chars-container {
 	display: flex;
 	flex-direction: row;
 }
 
-.person-detail-container {
+.crawl-detail-container {
 	width: 100%;
 }
-.details-button-container {
+.crawl-button-container {
 	width: 322px;
 	margin-right: 100px;
 	min-height: 305px;
@@ -33,7 +33,7 @@
 	justify-content: space-between;
 }
 
-.details-button-container button {
+.crawl-button-container button {
 	width: 187px;
 	border-radius: 17px;
 }
@@ -51,19 +51,14 @@
   background-color: #c4c4c4;
 }
 
-.person-detail-container ul {
-	list-style: none;
-	margin: 5px 0 0 0;
-	padding: 0;
-}
-
-.person-detail-container li {
+.crawl-text {
+	width: 220px;
 	font-size: 14px;
-	color: #000000;
-	margin-top: -1px;
+	margin: 5px 0 30px;
+	line-height: 17px;
 }
 
-.person-movies-container {
+.movie-char-container {
 	width: 322px;
 }
 

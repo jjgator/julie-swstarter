@@ -8,6 +8,7 @@
   height: 170px;
   margin: 30px 15px;
   padding: 30px;
+  border: solid 1px #dadada;
 }
 
 .search-container .title {

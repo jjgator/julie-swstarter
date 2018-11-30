@@ -13,6 +13,7 @@ const Results = (props) => (
               title={result.title || result.name}
               key={i}
               option={props.option}
+              detail={result}
             />
           })}
         </div>

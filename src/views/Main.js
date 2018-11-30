@@ -8,31 +8,60 @@ export default class Home extends Component {
   constructor() {
     super();
     this.state = {
-      results: []
+      results: [],
+      inputText: "",
+      isLoading: false
     };
     this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  handleSearchSubmit(e) {
+  async handleSearchSubmit(e) {
     e.preventDefault();
     const resource = e.target.radio.value;
-    const searchTerm = e.target.text.value;
+    const searchTerm = this.state.inputText;
+    let results = [];
 
-    this.getSearchResults(resource, searchTerm)
+    this.setState({isLoading: true});
+
+    await this.getSearchResults(resource, searchTerm)
     .then(response => {
-      this.setState({results: response.data.results});
+      results = response.data.results;
+    });
+
+    this.setState({
+      results: results,
+      inputText: "",
+      isLoading: false
+    });
+  }
+
+  handleInputChange (e) {
+    e.preventDefault();
+
+    this.setState({
+      inputText: e.target.value
     });
   }
 
   render() {
     return (
       <div className="main-container">
-        <Search onSubmit={this.handleSearchSubmit} />
-        <Results searchResults={this.state.results}/>
+        <Search 
+          onSubmit={this.handleSearchSubmit} 
+          inputText={this.state.inputText}
+          handleInputChange={this.handleInputChange}
+          isLoading={this.state.isLoading}
+        />
+        <Results 
+          searchResults={this.state.results}
+          isLoading={this.state.isLoading}
+        />
       </div>
     )
   }
 
+  // external api request
   getSearchResults(resource, query) {
     const url = 'https://swapi.co/api/' + resource + '/';
 

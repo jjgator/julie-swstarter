@@ -19,8 +19,14 @@ button {
 	font-size: 14px;
 	font-weight: bold;
 	height: 34px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #089954;
 }
 
 button:disabled {
 	background-color: #c4c4c4;
+	cursor: default;
 }

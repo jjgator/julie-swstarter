@@ -15,8 +15,18 @@ const Search = (props) => (
           <span className="btn-radio"></span>
         </label>
       </div>
-      <input type="text" name="text" disabled={false}/>
-      <button disabled={false}>SEARCH</button>
+      <input 
+        type="text" 
+        name="text" 
+        autoComplete="off"
+        value={props.inputText}
+        onChange={props.handleInputChange}
+      />
+      <button 
+        disabled={props.inputText.length > 0 ? false : true}
+      >
+        {props.isLoading === true ? 'SEARCHING...' : 'SEARCH'}
+      </button>
     </form>
   </div>
 )

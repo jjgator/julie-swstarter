@@ -8,23 +8,25 @@ export default class Home extends Component {
   constructor() {
     super();
     this.state = {
+      selectedOption: 'people',
       results: [],
       inputText: "",
       isLoading: false
     };
     this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleOptionChange = this.handleOptionChange.bind(this);
   }
 
   async handleSearchSubmit(e) {
     e.preventDefault();
-    const resource = e.target.radio.value;
-    const searchTerm = this.state.inputText;
+    const resource = this.state.selectedOption;
+    const query = this.state.inputText;
     let results = [];
 
     this.setState({isLoading: true});
 
-    await this.getSearchResults(resource, searchTerm)
+    await this.getSearchResults(resource, query)
     .then(response => {
       results = response.data.results;
     });
@@ -36,12 +38,18 @@ export default class Home extends Component {
     });
   }
 
-  handleInputChange (e) {
+  // controls text search input
+  handleInputChange(e) {
     e.preventDefault();
 
     this.setState({
       inputText: e.target.value
     });
+  }
+
+  // controls option/select input
+  handleOptionChange(e) {
+    this.setState({selectedOption: e.target.value});
   }
 
   render() {
@@ -51,7 +59,9 @@ export default class Home extends Component {
           onSubmit={this.handleSearchSubmit} 
           inputText={this.state.inputText}
           handleInputChange={this.handleInputChange}
+          handleOptionChange={this.handleOptionChange}
           isLoading={this.state.isLoading}
+          option={this.state.selectedOption}
         />
         <Results 
           searchResults={this.state.results}
@@ -65,7 +75,6 @@ export default class Home extends Component {
   getSearchResults(resource, query) {
     const url = 'https://swapi.co/api/' + resource + '/';
 
-    console.log(url);
     return axios.get(url, {
       params: {
         search: query

@@ -92,6 +92,12 @@ form .radio-inputs-container {
 	border: 1px solid #383838;
 }
 
+.search-container [type="text"]::placeholder {
+	font-family: Montserrat;
+	font-size: 14px;
+	color: #c4c4c4;
+}
+
 .search-container button {
 	width: 100%;
 }

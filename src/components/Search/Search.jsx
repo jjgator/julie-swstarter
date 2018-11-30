@@ -7,17 +7,31 @@ const Search = (props) => (
     <form onSubmit={props.onSubmit}>
       <div className="radio-inputs-container">
         <label>People
-          <input type="radio" defaultChecked={true} name="radio" value="people"/>
+          <input 
+            type="radio" 
+            value="people" 
+            checked={props.option === 'people' ? true : false}
+            onChange={props.handleOptionChange}
+          />
           <span className="btn-radio"></span>
         </label>
         <label>Movies
-          <input type="radio" name="radio" value="films"/>
+          <input 
+            type="radio" 
+            value="films"
+            checked={props.option === 'films' ? true : false}
+            onChange={props.handleOptionChange}
+          />
           <span className="btn-radio"></span>
         </label>
       </div>
       <input 
         type="text" 
         name="text" 
+        placeholder={props.option === 'people'
+          ? 'e.g. Chewbacca, Yoda, Boba Fett'
+          : 'e.g. Return of the Jedi'
+        }
         autoComplete="off"
         value={props.inputText}
         onChange={props.handleInputChange}

@@ -20,7 +20,7 @@
   background-color: #c4c4c4;
 }
 
-.results-container .contents {
+.results-container .text-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,9 +28,10 @@
   min-height: 489px;
 }
 
-.results-container .zero-matches {
+.text-container p.zero-matches {
 	font-size: 14px;
 	font-weight: bold;
 	color: #c4c4c4;
 	margin: 0 0 32px 0;
 }
+

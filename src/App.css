@@ -3,6 +3,14 @@
   color: #000000;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+
 button {
 	border-radius: 20px;
 	background-color: #0ab463;

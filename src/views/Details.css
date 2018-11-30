@@ -3,3 +3,8 @@
 	justify-content: center;
 }
 
+.loading {
+	font-size: 14px;
+	font-weight: bold;
+	color: #c4c4c4;
+}

@@ -23,7 +23,7 @@ export default class Details extends Component {
   render() {
     return (
       Object.keys(this.state.details).length === 0
-        ? <span>Loading...</span>
+        ? <span className="loading">Loading...</span>
         :  <div className="details-container">
             {this.state.type === 'person' 
               ? <Person details={this.state.details} />

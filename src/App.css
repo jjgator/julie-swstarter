@@ -1,3 +1,18 @@
 .App {
   font-size: 16px;
+  color: #000000;
+}
+
+button {
+	border-radius: 20px;
+	background-color: #0ab463;
+	border: none;
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	height: 34px;
+}
+
+button:disabled {
+	background-color: #c4c4c4;
 }

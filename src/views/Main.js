@@ -4,6 +4,10 @@ import Results from '../components/Results/Results';
 import './Main.css';
 
 export default class Home extends Component {
+  constructor() {
+    super();
+  }
+
   render() {
     return (
       <div className="main-container">

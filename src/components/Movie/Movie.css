@@ -67,3 +67,11 @@
 	text-decoration: none;
 	color: #ffffff;;
 }
+.char-container {
+	margin-top: 5px;
+}
+
+span {
+	color: #0094ff;
+	font-size: 14px;
+}

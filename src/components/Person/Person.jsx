@@ -25,6 +25,13 @@ const Person = (props) => (
       <div className="person-movies-container">
         <p className="subtitle">Movies</p>
         <div className="divider"></div>
+        <div className="movies-container">
+          {props.details.movies.map((film, i) => {
+            return i !== props.details.movies.length - 1
+              ? <span key={i}>{film + ', '}</span>
+              : <span key={i}>{film}</span>
+          })}
+        </div>
       </div>
     </div>
   </div>

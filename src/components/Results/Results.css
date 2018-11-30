@@ -1,8 +1,9 @@
 .results-container {
-	width: 582px;
-  height: 582px;
+	width: 522px;
+  height: 522px;
   border-radius: 4px;
   box-shadow: 0 1px 2px 0 rgba(132, 132, 132, 0.75);
   background-color: #ffffff;
   margin: 30px 15px;
+  padding: 30px;
 }
